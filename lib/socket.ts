@@ -4,7 +4,7 @@ let socket: Socket | undefined;
 
 export function getSocket() {
   if (!socket) {
-    socket = io(process.env.API_URL, {
+    socket = io(process.env.NEXT_PUBLIC_SOCKET_URL, {
       reconnectionDelayMax: 10000,
       auth: (cb) => {
         fetch("/api/socket-token")
